@@ -8,13 +8,13 @@ namespace Frends.Regex
 {
     public static class RegexReplace
     {
-        private static void ValidateInput(object input)
+        private static void ValidateInput(ReplaceParameters replaceParams)
         {
-            if (input == null)
+            if (replaceParams == null)
             {
-                throw new ArgumentNullException(nameof(input));
+                throw new ArgumentNullException(nameof(replaceParams));
             }
-            else if (input is ReplaceParameters replaceParams)
+            else
             {
                 if (string.IsNullOrEmpty(replaceParams.InputText))
                 {
@@ -28,8 +28,6 @@ namespace Frends.Regex
                 {
                     throw new ArgumentNullException(nameof(replaceParams.RegularExpression));
                 }
-            } else {
-                throw new ArgumentException("Invalid type.", nameof(input));
             }
         }
 

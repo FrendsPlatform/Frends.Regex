@@ -2,10 +2,10 @@
 
   <PropertyGroup>
 	<TargetFrameworks>netstandard2.0;net471</TargetFrameworks>
-    <authors>$env:UserName</authors>
-    <copyright>$env:UserName</copyright>
-    <PackageLicenseExpression>UNLICENSED</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/CommunityHiQ/Frends.Regex</PackageProjectUrl>
+    <authors>HiQ Finland</authors>
+    <copyright>HiQ Finland</copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/FrendsPlatform/Frends.Regex</PackageProjectUrl>
     <IncludeSource>true</IncludeSource>
     <PackageTags>Frends</PackageTags>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>

@@ -7,13 +7,13 @@ namespace Frends.Regex
 {
     public static class RegexIsMatch
     {
-        private static void ValidateInput(object input)
+        private static void ValidateInput(MatchParameters matchParam)
         {
-            if (input == null)
+            if (matchParam == null)
             {
-                throw new ArgumentNullException(nameof(input));
+                throw new ArgumentNullException(nameof(matchParam));
             }
-            else if (input is MatchParameters matchParam)
+            else
             {
                 if (string.IsNullOrEmpty(matchParam.InputText))
                 {
@@ -23,8 +23,6 @@ namespace Frends.Regex
                 {
                     throw new ArgumentNullException(nameof(matchParam.RegularExpression));
                 }
-            } else {
-                throw new ArgumentException("Invalid type.", nameof(input));
             }
         }
 
