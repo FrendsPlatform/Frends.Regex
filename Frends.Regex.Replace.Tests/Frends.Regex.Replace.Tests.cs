@@ -47,11 +47,11 @@ namespace Frends.Regex.Replace
         public void TestReplacingWorks()
         {
             var original = shortString;
-            var expected = shortString.Replace("Sampo", "Ky�sti");
+            var expected = shortString.Replace("Sampo", "Kyosti");
 
             var p = new ReplaceParameters
             {
-                Replacement = "Ky�sti",
+                Replacement = "Kyosti",
                 InputText = original,
                 RegularExpression = "[S][a][m][p][o]"
             };
