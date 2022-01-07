@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Frends.Regex.IsMatch\Frends.Regex.RegexIsMatch.csproj" />
+    <ProjectReference Include="..\Frends.Regex.Replace\Frends.Regex.RegexReplace.csproj" />
   </ItemGroup>
 
 </Project>
