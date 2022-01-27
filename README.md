@@ -14,8 +14,7 @@ Frends tasks for regular expressions
 
 # Installing
 
-You can install the Task via frends UI Task View or you can find the NuGet package from the following NuGet feed
-https://www.myget.org/F/frends-community/api/v3/index.json and in Gallery view in MyGet https://www.myget.org/feed/frends-community/package/nuget/Frends.Regex
+You can install the Task via frends UI Task View.
 
 # Tasks
 
