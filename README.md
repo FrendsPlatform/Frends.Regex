@@ -2,7 +2,7 @@
 
 Frends tasks for regular expressions
 
-[![Actions Status](https://github.com/FrendsPlatform/Frends.Regex/actions/workflows/build_and_test_on_main.yml/badge.svg)](https://github.com/FrendsPlatform/Frends.Regex/actions) ![MyGet](https://img.shields.io/myget/frends-community/v/Frends.Regex) [![License: UNLICENSED](https://img.shields.io/badge/License-UNLICENSED-yellow.svg)](https://opensource.org/licenses/UNLICENSED) 
+[![Actions Status](https://github.com/FrendsPlatform/Frends.Regex/actions/workflows/build_and_test_on_main.yml/badge.svg)](https://github.com/FrendsPlatform/Frends.Regex/actions) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 - [Installing](#installing)
 - [Tasks](#tasks)
