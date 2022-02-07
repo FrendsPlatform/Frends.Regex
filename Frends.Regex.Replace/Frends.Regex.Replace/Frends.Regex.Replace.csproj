@@ -10,7 +10,7 @@
     <PackageTags>Frends</PackageTags>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Version>1.0.0</Version>
-    <Description>Frends.Regex.Replace</Description>
+    <Description>Task for replacing parts of string input using Regex.</Description>
   </PropertyGroup>
 
   <ItemGroup>
