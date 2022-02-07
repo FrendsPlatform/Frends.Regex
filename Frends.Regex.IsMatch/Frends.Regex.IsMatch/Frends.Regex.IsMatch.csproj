@@ -10,6 +10,7 @@
     <PackageTags>Frends</PackageTags>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Version>0.0.3</Version>
+    <Description>Frends.Regex.IsMatch</Description>
   </PropertyGroup>
 
   <ItemGroup>
