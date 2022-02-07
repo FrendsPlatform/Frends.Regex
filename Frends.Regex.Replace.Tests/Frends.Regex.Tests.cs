@@ -11,30 +11,6 @@ namespace Frends.Regex.Tests
         #region null param testing
 
         [Test]
-        public void TestIsMatchThrowsOnNullParam()
-        {
-            Assert.Throws<ArgumentNullException>(() => { RegexIsMatch.IsMatch(null); }, "IsMatch() should throw ArgumentNullException when null parameters are passed.");
-
-            Assert.Throws<ArgumentNullException>(() =>
-            {
-                RegexIsMatch.IsMatch(new MatchParameters
-                {
-                    InputText = "not empty",
-                    RegularExpression = ""
-                });
-            });
-
-            Assert.Throws<ArgumentNullException>(() =>
-            {
-                RegexIsMatch.IsMatch(new MatchParameters
-                {
-                    InputText = "",
-                    RegularExpression = "not empty"
-                });
-            });
-        }
-
-        [Test]
         public void TestReplaceThrowsOnNullParam()
         {
             Assert.Throws<ArgumentNullException>(() => { RegexReplace.Replace(null); }, "Replace() should throw ArgumentNullException when null parameters are passed.");
@@ -63,18 +39,6 @@ namespace Frends.Regex.Tests
         #region non-null param testing
 
         [Test]
-        public void TestIsMatchDoesntThrowOnNonNullParam()
-        {
-            var matchP = new MatchParameters()
-            {
-                RegularExpression = "not empty",
-                InputText = "not empty"
-            };
-
-            Assert.DoesNotThrow(() => { RegexIsMatch.IsMatch(matchP); });
-        }
-
-        [Test]
         public void TestReplaceDoesntThrowOnNonNullParam()
         {
             var replaceP = new ReplaceParameters()
@@ -90,25 +54,6 @@ namespace Frends.Regex.Tests
         #endregion
 
         #region work-as-intended testing
-        [Test]
-        public void TestIsMatchWorks()
-        {
-            var p = new MatchParameters
-            {
-                InputText = "{this ain't no thang}",
-                RegularExpression = "^{(.*?)}$"
-            };
-            var result = RegexIsMatch.IsMatch(p);
-            Assert.IsTrue(result.IsMatch);
-
-            p = new MatchParameters
-            {
-                InputText = "sdfsdfsdf{this ain't no thang}",
-                RegularExpression = "^{(.*?)}$"
-            };
-            result = RegexIsMatch.IsMatch(p);
-            Assert.IsFalse(result.IsMatch);
-        }
 
         [Test]
         public void TestReplacingWorks()
