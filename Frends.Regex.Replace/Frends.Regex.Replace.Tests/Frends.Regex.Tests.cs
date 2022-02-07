@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using System;
 
-namespace Frends.Regex.Tests
+namespace Frends.Regex.Replace.Tests
 {
     [TestFixture]
     class Tests
@@ -13,11 +13,11 @@ namespace Frends.Regex.Tests
         [Test]
         public void TestReplaceThrowsOnNullParam()
         {
-            Assert.Throws<ArgumentNullException>(() => { RegexReplace.Replace(null); }, "Replace() should throw ArgumentNullException when null parameters are passed.");
+            Assert.Throws<ArgumentNullException>(() => { Regex.Replace(null); }, "Replace() should throw ArgumentNullException when null parameters are passed.");
 
             Assert.Throws<ArgumentNullException>(() =>
             {
-                RegexReplace.Replace(new ReplaceParameters
+                Regex.Replace(new ReplaceParameters
                 {
                     InputText = "not empty",
                     RegularExpression = ""
@@ -26,7 +26,7 @@ namespace Frends.Regex.Tests
 
             Assert.Throws<ArgumentNullException>(() =>
             {
-                RegexReplace.Replace(new ReplaceParameters
+                Regex.Replace(new ReplaceParameters
                 {
                     InputText = "",
                     RegularExpression = "not empty"
@@ -48,7 +48,7 @@ namespace Frends.Regex.Tests
                 RegularExpression = "not empty"
             };
 
-            Assert.DoesNotThrow(() => { RegexReplace.Replace(replaceP); });
+            Assert.DoesNotThrow(() => { Regex.Replace(replaceP); });
         }
 
         #endregion
@@ -68,7 +68,7 @@ namespace Frends.Regex.Tests
                 RegularExpression = "[S][a][m][p][o]"
             };
 
-            var result = RegexReplace.Replace(p);
+            var result = Regex.Replace(p);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(expected, result.ReplacedText);
