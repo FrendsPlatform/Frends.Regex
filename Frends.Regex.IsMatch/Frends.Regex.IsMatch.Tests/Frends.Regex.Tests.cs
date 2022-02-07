@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using System;
 
-namespace Frends.Regex.Tests
+namespace Frends.Regex.IsMatch.Tests
 {
     [TestFixture]
     class Tests
@@ -13,11 +13,11 @@ namespace Frends.Regex.Tests
         [Test]
         public void TestIsMatchThrowsOnNullParam()
         {
-            Assert.Throws<ArgumentNullException>(() => { RegexIsMatch.IsMatch(null); }, "IsMatch() should throw ArgumentNullException when null parameters are passed.");
+            Assert.Throws<ArgumentNullException>(() => { Regex.IsMatch(null); }, "IsMatch() should throw ArgumentNullException when null parameters are passed.");
 
             Assert.Throws<ArgumentNullException>(() =>
             {
-                RegexIsMatch.IsMatch(new MatchParameters
+                Regex.IsMatch(new MatchParameters
                 {
                     InputText = "not empty",
                     RegularExpression = ""
@@ -26,7 +26,7 @@ namespace Frends.Regex.Tests
 
             Assert.Throws<ArgumentNullException>(() =>
             {
-                RegexIsMatch.IsMatch(new MatchParameters
+                Regex.IsMatch(new MatchParameters
                 {
                     InputText = "",
                     RegularExpression = "not empty"
@@ -47,7 +47,7 @@ namespace Frends.Regex.Tests
                 InputText = "not empty"
             };
 
-            Assert.DoesNotThrow(() => { RegexIsMatch.IsMatch(matchP); });
+            Assert.DoesNotThrow(() => { Regex.IsMatch(matchP); });
         }
 
         #endregion
@@ -62,7 +62,7 @@ namespace Frends.Regex.Tests
                 InputText = "{this ain't no thang}",
                 RegularExpression = "^{(.*?)}$"
             };
-            var result = RegexIsMatch.IsMatch(p);
+            var result = Regex.IsMatch(p);
             Assert.IsTrue(result.IsMatch);
 
             p = new MatchParameters
@@ -70,7 +70,7 @@ namespace Frends.Regex.Tests
                 InputText = "sdfsdfsdf{this ain't no thang}",
                 RegularExpression = "^{(.*?)}$"
             };
-            result = RegexIsMatch.IsMatch(p);
+            result = Regex.IsMatch(p);
             Assert.IsFalse(result.IsMatch);
         }
 
