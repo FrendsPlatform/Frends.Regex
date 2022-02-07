@@ -1,0 +1,21 @@
+name: Frends.Regex.Replace Test
+
+on:
+  push:
+    branches-ignore:
+      - main
+    paths:
+      - 'Frends.Regex.Replace/**'
+      - 'Frends.Regex.Replace.Tests/**'
+  workflow_dispatch:
+  
+
+jobs:
+  build:
+    uses: FrendsPlatform/FrendsTasks/.github/workflows/build_test_2.yml@convention_based_builds
+    with:
+      task_name: Frends.Regex.Replace
+    secrets:
+      badge_service_api_key: ${{ secrets.BADGE_SERVICE_API_KEY }}
+      test_feed_api_key: ${{ secrets.TASKS_TEST_FEED_API_KEY }}
+      

@@ -1,0 +1,14 @@
+name: Frends.Regex.Replace Release
+
+on:
+  workflow_dispatch:
+  
+
+jobs:
+  build:
+    uses: FrendsPlatform/FrendsTasks/.github/workflows/release_2.yml@convention_based_builds
+    with:
+      task_name: Frends.Regex.Replace
+    secrets:
+      feed_api_key: ${{ secrets.TASKS_FEED_API_KEY }}
+      

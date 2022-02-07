@@ -1,0 +1,20 @@
+name: Frends.Regex.Replace Main
+
+on:
+  push:
+    branches:    
+      - main
+    paths:
+      - 'Frends.Regex.IsMatch/**'
+      - 'Frends.Regex.IsMatch.Tests/**'
+  workflow_dispatch:
+  
+
+jobs:
+  build:
+    uses: FrendsPlatform/FrendsTasks/.github/workflows/build_main_2.yml@convention_based_builds
+    with:
+      task_name: Frends.Regex.IsMatch
+    secrets:
+      badge_service_api_key: ${{ secrets.BADGE_SERVICE_API_KEY }}
+      
