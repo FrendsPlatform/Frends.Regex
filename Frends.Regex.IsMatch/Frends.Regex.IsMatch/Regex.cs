@@ -3,9 +3,9 @@ using System.ComponentModel;
 
 #pragma warning disable 1591
 
-namespace Frends.Regex
+namespace Frends.Regex.IsMatch
 {
-    public static class RegexIsMatch
+    public static class Regex
     {
         private static void ValidateInput(MatchParameters matchParam)
         {

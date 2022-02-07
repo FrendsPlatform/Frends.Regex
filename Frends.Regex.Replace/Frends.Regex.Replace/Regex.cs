@@ -4,9 +4,9 @@ using Frends.Regex;
 
 #pragma warning disable 1591
 
-namespace Frends.Regex
+namespace Frends.Regex.Replace
 {
-    public static class RegexReplace
+    public static class Regex
     {
         private static void ValidateInput(ReplaceParameters replaceParams)
         {
