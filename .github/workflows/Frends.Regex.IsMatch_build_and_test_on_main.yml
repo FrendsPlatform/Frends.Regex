@@ -1,4 +1,4 @@
-name: Frends.Regex.Replace Main
+name: Frends.Regex.IsMatch Main
 
 on:
   push:
