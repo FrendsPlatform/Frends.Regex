@@ -6,9 +6,9 @@ on:
 
 jobs:
   build:
-    uses: FrendsPlatform/FrendsTasks/.github/workflows/release_2.yml@convention_based_builds
+    uses: FrendsPlatform/FrendsTasks/.github/workflows/release.yml@main
     with:
-      task_name: Frends.Regex.IsMatch
+      workdir: Frends.Regex.IsMatch
     secrets:
       feed_api_key: ${{ secrets.TASKS_FEED_API_KEY }}
       
