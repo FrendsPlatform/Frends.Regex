@@ -36,7 +36,7 @@ To fetch result use syntax:
 
 Clone a copy of the repository
 
-`git clone https://github.com/CommunityHiQ/Frends.Regex.git`
+`git clone https://github.com/FrendsPlatform/Frends.Regex.git`
 
 Rebuild the project
 
