@@ -28,7 +28,8 @@ namespace Frends.Regex.IsMatch
 
         /// <summary>
         /// Reads text and returns a boolean indicating if the text matches 
-        /// with specified regular expression. https://github.com/FrendsPlatform/Frends.Regex/tree/main/Frends.Regex.IsMatch
+        /// with specified regular expression.
+        /// [Documentation](https://github.com/FrendsPlatform/Frends.Regex/tree/main/Frends.Regex.IsMatch)
         /// </summary>
         /// <seealso cref=""/>
         /// <returns>{bool IsMatch}</returns>
