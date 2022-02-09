@@ -32,7 +32,7 @@ namespace Frends.Regex.Replace
         }
 
         /// <summary>
-        /// Reads text and replaces substring(s) matching with specified regular expression.
+        /// Reads text and replaces substring(s) matching with specified regular expression. https://github.com/FrendsPlatform/Frends.Regex/tree/main/Frends.Regex.Replace
         /// </summary>
         /// <returns>{string ReplacedText}</returns>
         public static ReplaceResult Replace([PropertyTab] ReplaceParameters input)
