@@ -51,9 +51,3 @@ Run tests
 Create a NuGet package
 
 `dotnet pack --configuration Release`
-
-# Changelog
-
-## [1.0.0] - 2022-02-09
-### Added
-- Initial implementation
