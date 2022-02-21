@@ -38,7 +38,7 @@ To fetch result use syntax:
 
 Clone a copy of the repository
 
-`git clone https://github.com/CommunityHiQ/Frends.Regex.git`
+`git clone https://github.com/FrendsPlatform/Frends.Regex.git`
 
 Rebuild the project
 
@@ -51,9 +51,3 @@ Run tests
 Create a NuGet package
 
 `dotnet pack --configuration Release`
-
-# Changelog
-
-## [1.0.0] - 2022-02-09
-### Added
-- Initial implementation
