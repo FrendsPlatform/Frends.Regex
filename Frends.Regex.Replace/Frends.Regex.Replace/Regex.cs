@@ -1,55 +1,34 @@
-﻿using System;
+﻿using Frends.Regex.Replace.Definitions;
+using System;
 using System.ComponentModel;
-using Frends.Regex;
 
-#pragma warning disable 1591
+namespace Frends.Regex.Replace;
 
-namespace Frends.Regex.Replace
+/// <summary>
+/// Regex Replace task.
+/// </summary>
+public static class Regex
 {
-    public static class Regex
+    /// <summary>
+    /// Reads text and replaces substring(s) matching with specified regular expression.
+    /// [Documentation](https://tasks.frends.com/tasks/frends-tasks/Frends.Regex.Replace)
+    /// </summary>
+    /// <returns>string ReplacedText</returns>
+    public static Result Replace([PropertyTab] Input input)
     {
-        private static void ValidateInput(ReplaceParameters replaceParams)
+        if (input == null) throw new ArgumentNullException(nameof(input));
+        else
         {
-            if (replaceParams == null)
-            {
-                throw new ArgumentNullException(nameof(replaceParams));
-            }
-            else
-            {
-                if (string.IsNullOrEmpty(replaceParams.InputText))
-                {
-                    throw new ArgumentNullException(nameof(replaceParams.InputText));
-                }
-                if (string.IsNullOrEmpty(replaceParams.Replacement))
-                {
-                    throw new ArgumentNullException(nameof(replaceParams.Replacement));
-                }
-                if (string.IsNullOrEmpty(replaceParams.RegularExpression))
-                {
-                    throw new ArgumentNullException(nameof(replaceParams.RegularExpression));
-                }
-            }
+            if (string.IsNullOrEmpty(input.InputText))
+                throw new ArgumentNullException(nameof(input.InputText));
+            if (string.IsNullOrEmpty(input.Replacement))
+                throw new ArgumentNullException(nameof(input.Replacement));
+            if (string.IsNullOrEmpty(input.RegularExpression))
+                throw new ArgumentNullException(nameof(input.RegularExpression));
         }
 
-        /// <summary>
-        /// Reads text and replaces substring(s) matching with specified regular expression.
-        /// [Documentation](https://github.com/FrendsPlatform/Frends.Regex/tree/main/Frends.Regex.Replace)
-        /// </summary>
-        /// <returns>{string ReplacedText}</returns>
-        public static ReplaceResult Replace([PropertyTab] ReplaceParameters input)
-        {
-            ValidateInput(input);
-
-            var regex = new System.Text.RegularExpressions.Regex(input.RegularExpression);
-
-            string resultValue = regex.Replace(input.InputText, input.Replacement);
-
-            var output = new ReplaceResult
-            {
-                ReplacedText = resultValue
-            };
-
-            return output;
-        }
+        var regex = new System.Text.RegularExpressions.Regex(input.RegularExpression);
+        string resultValue = regex.Replace(input.InputText, input.Replacement);
+        return new Result (resultValue);
     }
 }
