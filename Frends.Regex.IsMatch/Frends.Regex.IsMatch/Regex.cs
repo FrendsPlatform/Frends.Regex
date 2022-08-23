@@ -5,7 +5,7 @@ using System.ComponentModel;
 namespace Frends.Regex.IsMatch
 {
     /// <summary>
-    /// Regex IsMatch tasm.
+    /// Regex IsMatch task.
     /// </summary>
     public static class Regex
     {
