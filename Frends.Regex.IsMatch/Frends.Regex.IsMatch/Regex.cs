@@ -1,49 +1,30 @@
-﻿using System;
+﻿using Frends.Regex.IsMatch.Definitions;
+using System;
 using System.ComponentModel;
-
-#pragma warning disable 1591
 
 namespace Frends.Regex.IsMatch
 {
+    /// <summary>
+    /// Regex IsMatch tasm.
+    /// </summary>
     public static class Regex
     {
-        private static void ValidateInput(MatchParameters matchParam)
+        /// <summary>
+        /// Reads text and returns a boolean indicating if the text matches with specified regular expression.
+        /// [Documentation](https://tasks.frends.com/tasks/frends-tasks/Frends.Regex.IsMatch)
+        /// </summary>
+        /// <returns>{bool IsMatch}</returns>
+        public static Result IsMatch([PropertyTab] Input input)
         {
-            if (matchParam == null)
-            {
-                throw new ArgumentNullException(nameof(matchParam));
-            }
+            if (input == null) throw new ArgumentNullException(nameof(input));
             else
             {
-                if (string.IsNullOrEmpty(matchParam.InputText))
-                {
-                    throw new ArgumentNullException(nameof(matchParam.InputText));
-                }
-                if (string.IsNullOrEmpty(matchParam.RegularExpression))
-                {
-                    throw new ArgumentNullException(nameof(matchParam.RegularExpression));
-                }
+                if (string.IsNullOrEmpty(input.InputText)) throw new ArgumentNullException(nameof(input.InputText));
+                if (string.IsNullOrEmpty(input.RegularExpression)) throw new ArgumentNullException(nameof(input.RegularExpression));
             }
-        }
-
-        /// <summary>
-        /// Reads text and returns a boolean indicating if the text matches 
-        /// with specified regular expression.
-        /// [Documentation](https://github.com/FrendsPlatform/Frends.Regex/tree/main/Frends.Regex.IsMatch)
-        /// </summary>
-        /// <seealso cref=""/>
-        /// <returns>{bool IsMatch}</returns>
-        public static IsMatchResult IsMatch([PropertyTab] MatchParameters input)
-        {
-            ValidateInput(input);
 
             var regex = new System.Text.RegularExpressions.Regex(input.RegularExpression);
-
-            return new IsMatchResult
-            {
-                IsMatch = regex.IsMatch(input.InputText)
-            };
+            return new Result(regex.IsMatch(input.InputText));
         }
-
     }
 }
