@@ -1,4 +1,5 @@
 # Frends.Regex.IsMatch
+Frends task for checking if a string matches a certain Regex pattern.
 
 [![Frends.Regex.IsMatch Main](https://github.com/FrendsPlatform/Frends.Regex/actions/workflows/IsMatch_build_and_test_on_main.yml/badge.svg)](https://github.com/FrendsPlatform/Frends.Regex/actions/workflows/IsMatch_build_and_test_on_main.yml)
 ![MyGet](https://img.shields.io/myget/frends-tasks/v/Frends.Regex.IsMatch?label=NuGet)
