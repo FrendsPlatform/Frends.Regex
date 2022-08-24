@@ -2,7 +2,7 @@
 
 ## [1.0.2] - 2022-08-23
 ### Changed
-- Documentation.
+- Documentation and dependency update.
 
 ## [1.0.1] - 2022-02-21
 ### Changed
