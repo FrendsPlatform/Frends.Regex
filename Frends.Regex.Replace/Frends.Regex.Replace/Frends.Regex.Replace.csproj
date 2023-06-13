@@ -5,12 +5,13 @@
     <authors>Frends</authors>
     <copyright>Frends</copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/FrendsPlatform/Frends.Regex</PackageProjectUrl>
+	<PackageProjectUrl>https://frends.com/</PackageProjectUrl>
     <IncludeSource>true</IncludeSource>
     <PackageTags>Frends</PackageTags>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Description>Task for replacing parts of string input using Regex.</Description>
+    <RepositoryUrl>https://github.com/FrendsPlatform/Frends.Regex</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
