@@ -15,6 +15,7 @@ public static class Regex
     /// Frends Task for checking if a string matches a certain Regex pattern.
     /// [Documentation](https://tasks.frends.com/tasks/frends-tasks/Frends.Regex.IsMatch)
     /// </summary>
+    /// <param name="input">Input parameters.</param>
     /// <returns>Object { bool IsMatch, string Data }</returns>
     public static Result IsMatch([PropertyTab] Input input)
     {
