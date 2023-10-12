@@ -1,4 +1,7 @@
 # Changelog
+## [1.1.0] - 2023-10-12
+### Added
+- Result.Data: Matching values as a string.
 
 ## [1.0.1] - 2022-02-21
 ### Changed

@@ -11,8 +11,15 @@ public class Result
     /// <example>true</example>
     public bool IsMatch { get; private set; }
 
-    internal Result(bool isMatch)
+    /// <summary>
+    /// Matching values.
+    /// </summary>
+    /// <example>{foobar}</example>
+    public string Data { get; private set; }
+
+    internal Result(bool isMatch, string data)
     {
         IsMatch = isMatch;
+        Data = data;
     }
 }
