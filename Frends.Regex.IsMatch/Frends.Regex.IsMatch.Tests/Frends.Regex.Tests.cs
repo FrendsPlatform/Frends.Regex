@@ -53,6 +53,7 @@ class Tests
         };
         var result = Regex.IsMatch(p);
         Assert.IsTrue(result.IsMatch);
+        Assert.AreEqual("{this ain't no thang}", result.Data);
 
         p = new Input
         {
@@ -61,5 +62,6 @@ class Tests
         };
         result = Regex.IsMatch(p);
         Assert.IsFalse(result.IsMatch);
+        Assert.IsNull(result.Data);
     }
 }
