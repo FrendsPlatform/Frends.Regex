@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.2] - 2024-06-14
+### Changed
+- Updated to work with .NET 8.0 frends process.
+
 ## [1.0.1] - 2023-06-13
 ### Changed
 - Documentation updates.
