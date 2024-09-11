@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.0] - 2024-09-11
+### Update
+- Needed to increase the version number to fix the issue with .Net8 targeted processes not finding correct namespace.
+
 ## [1.0.1] - 2023-06-13
 ### Changed
 - Documentation updates.
