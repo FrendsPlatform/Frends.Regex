@@ -1,35 +1,30 @@
 ﻿namespace Frends.Regex.MatchResult;
 
+using System;
 using System.ComponentModel;
 using System.Threading;
 using Frends.Regex.MatchResult.Definitions;
 
 /// <summary>
-/// Main class of the Task.
+/// Regex MatchResult Task.
 /// </summary>
 public static class Regex
 {
     /// <summary>
-    /// This is Task.
+    /// Frends Task for getting full result of a match.
     /// [Documentation](https://tasks.frends.com/tasks/frends-tasks/Frends.Regex.MatchResult).
     /// </summary>
     /// <param name="input">What to repeat.</param>
-    /// <param name="options">Define if repeated multiple times. </param>
     /// <param name="cancellationToken">Cancellation token given by Frends.</param>
     /// <returns>Object { string Output }.</returns>
-    public static Result MatchResult([PropertyTab] Input input, [PropertyTab] Options options, CancellationToken cancellationToken)
+    public static Result MatchResult([PropertyTab] Input input, CancellationToken cancellationToken)
     {
-        var repeats = new string[options.Amount];
+        if (input == null) throw new ArgumentNullException(nameof(input));
+        if (string.IsNullOrEmpty(input.InputText)) throw new ArgumentNullException(null, nameof(input.InputText));
+        if (string.IsNullOrEmpty(input.RegularExpression)) throw new ArgumentNullException(null, nameof(input.RegularExpression));
 
-        for (var i = 0; i < options.Amount; i++)
-        {
-            // It is good to check the cancellation token somewhere you spend lot of time, e.g. in loops.
-            cancellationToken.ThrowIfCancellationRequested();
-            repeats[i] = input.Content;
-        }
-
-        var output = new Result(string.Join(options.Delimiter, repeats));
-
-        return output;
+        var regex = new System.Text.RegularExpressions.Regex(input.RegularExpression);
+        var matches = regex.Matches(input.InputText);
+        return new Result(matches);
     }
 }

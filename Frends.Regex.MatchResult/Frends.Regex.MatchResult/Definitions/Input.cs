@@ -4,15 +4,22 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 /// <summary>
-/// Input class usually contains parameters that are required.
+/// Input parameters.
 /// </summary>
 public class Input
 {
     /// <summary>
-    /// Something that will be repeated.
+    /// Text to be examined.
     /// </summary>
-    /// <example>Some example of the expected value</example>
+    /// <example>Example text.</example>
     [DisplayFormat(DataFormatString = "Text")]
-    [DefaultValue("Lorem ipsum dolor sit amet.")]
-    public string Content { get; set; }
+    public string InputText { get; set; }
+
+    /// <summary>
+    /// Regular expression pattern.
+    /// </summary>
+    /// <example>abc*</example>
+    [DisplayFormat(DataFormatString = "Text")]
+    [Required]
+    public string RegularExpression { get; set; } = " ";
 }

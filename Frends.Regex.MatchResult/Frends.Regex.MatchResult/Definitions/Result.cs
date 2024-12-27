@@ -1,18 +1,14 @@
 ﻿namespace Frends.Regex.MatchResult.Definitions;
+using System.Text.RegularExpressions;
 
 /// <summary>
-/// Result class usually contains properties of the return object.
+/// Result.
 /// </summary>
-public class Result
+public class Result(MatchCollection matches)
 {
-    internal Result(string output)
-    {
-        this.Output = output;
-    }
-
     /// <summary>
-    /// Contains the input repeated the specified number of times.
+    /// Match result.
     /// </summary>
-    /// <example>Example of the output</example>
-    public string Output { get; private set; }
+    public MatchCollection Matches { get; private set; } = matches;
+
 }
