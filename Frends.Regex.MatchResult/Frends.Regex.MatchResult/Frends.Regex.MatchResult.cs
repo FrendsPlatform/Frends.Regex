@@ -11,12 +11,12 @@ using Frends.Regex.MatchResult.Definitions;
 public static class Regex
 {
     /// <summary>
-    /// Frends Task for getting full result of a match.
+    /// Frends Task will return full info for match result.
     /// [Documentation](https://tasks.frends.com/tasks/frends-tasks/Frends.Regex.MatchResult).
     /// </summary>
     /// <param name="input">What to repeat.</param>
     /// <param name="cancellationToken">Cancellation token given by Frends.</param>
-    /// <returns>Object { string Output }.</returns>
+    /// <returns>MatchCollection matches</returns>
     public static Result MatchResult([PropertyTab] Input input, CancellationToken cancellationToken)
     {
         if (input == null) throw new ArgumentNullException(nameof(input));
