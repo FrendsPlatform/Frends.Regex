@@ -28,7 +28,7 @@ public static class Regex
 
         var regex = new System.Text.RegularExpressions.Regex(input.RegularExpression);
         MatchCollection matches = regex.Matches(input.InputText);
-        List<RegexMatch> regexMatches = new ();
+        List<RegexMatch> regexMatches = new();
 
         foreach (Match match in matches)
         {
