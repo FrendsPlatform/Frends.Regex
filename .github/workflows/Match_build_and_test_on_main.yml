@@ -1,18 +1,18 @@
-name: MatchResult_build_main
+name: Match_build_main
 
 on:
   push:
     branches:    
       - main
     paths:
-      - 'Frends.Regex.MatchResult/**'
+      - 'Frends.Regex.Match/**'
   workflow_dispatch:
 
 jobs:
   build:
     uses: FrendsPlatform/FrendsTasks/.github/workflows/linux_build_main.yml@main
     with:
-      workdir: Frends.Regex.MatchResult
+      workdir: Frends.Regex.Match
     secrets:
       badge_service_api_key: ${{ secrets.BADGE_SERVICE_API_KEY }}
       

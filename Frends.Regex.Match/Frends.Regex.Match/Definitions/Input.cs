@@ -1,6 +1,5 @@
-﻿namespace Frends.Regex.MatchResult.Definitions;
+﻿namespace Frends.Regex.Match.Definitions;
 
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 /// <summary>

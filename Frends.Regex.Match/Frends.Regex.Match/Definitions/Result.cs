@@ -1,4 +1,7 @@
-﻿namespace Frends.Regex.MatchResult.Definitions;
+﻿namespace Frends.Regex.Match.Definitions;
+
+using System.Collections.Generic;
+
 using System.Text.RegularExpressions;
 
 /// <summary>
@@ -6,7 +9,7 @@ using System.Text.RegularExpressions;
 /// </summary>
 public class Result
 {
-    internal Result(MatchCollection matches)
+    internal Result(List<RegexMatch> matches)
     {
         Matches = matches;
     }
@@ -14,5 +17,5 @@ public class Result
     /// <summary>
     /// Match result.
     /// </summary>
-    public MatchCollection Matches { get; private set; }
+    public List<RegexMatch> Matches { get; private set; }
 }

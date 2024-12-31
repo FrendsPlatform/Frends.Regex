@@ -19,6 +19,7 @@
 	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	  <PrivateAssets>all</PrivateAssets>
 	</PackageReference>
+	<PackageReference Include="FluentAssertions" Version="7.0.0" />
     <PackageReference Include="nunit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.17.0">
       <PrivateAssets>all</PrivateAssets>
@@ -32,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Frends.Regex.MatchResult\Frends.Regex.MatchResult.csproj" />
+    <ProjectReference Include="..\Frends.Regex.Match\Frends.Regex.Match.csproj" />
   </ItemGroup>
 
 </Project>

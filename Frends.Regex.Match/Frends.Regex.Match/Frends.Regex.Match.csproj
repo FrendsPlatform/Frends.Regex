@@ -13,7 +13,7 @@
 	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
 	  <Description>Task will return full info for match result.</Description>
 	  <PackageProjectUrl>https://frends.com/</PackageProjectUrl>
-	  <RepositoryUrl>https://github.com/FrendsPlatform/Frends.Regex/tree/main/Frends.Regex.MatchResult</RepositoryUrl>
+	  <RepositoryUrl>https://github.com/FrendsPlatform/Frends.Regex/tree/main/Frends.Regex.Match</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

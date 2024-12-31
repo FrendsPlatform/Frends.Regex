@@ -1,4 +1,4 @@
-name: MatchResult_release
+name: Match_release
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ jobs:
   build:
     uses: FrendsPlatform/FrendsTasks/.github/workflows/release.yml@main
     with:
-      workdir: Frends.Regex.MatchResult
+      workdir: Frends.Regex.Match
     secrets:
       feed_api_key: ${{ secrets.TASKS_FEED_API_KEY }}
       

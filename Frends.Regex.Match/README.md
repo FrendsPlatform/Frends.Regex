@@ -1,10 +1,10 @@
-# Frends.Regex.MatchResult
+# Frends.Regex.Match
 
 Task will return full info for match result.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Build](https://github.com/FrendsPlatform/Frends.Regex/actions/workflows/MatchResult_build_and_test_on_main.yml/badge.svg)](https://github.com/FrendsPlatform/Frends.Regex/actions)
-![Coverage](https://app-github-custom-badges.azurewebsites.net/Badge?key=FrendsPlatform/Frends.Regex/Frends.Regex.MatchResult|main)
+[![Build](https://github.com/FrendsPlatform/Frends.Regex/actions/workflows/Match_build_and_test_on_main.yml/badge.svg)](https://github.com/FrendsPlatform/Frends.Regex/actions)
+![Coverage](https://app-github-custom-badges.azurewebsites.net/Badge?key=FrendsPlatform/Frends.Regex/Frends.Regex.Match|main)
 
 ## Installing
 
