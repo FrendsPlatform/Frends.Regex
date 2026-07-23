@@ -1,7 +1,6 @@
 using Frends.Regex.IsMatch.Definitions;
 using NUnit.Framework;
 using System;
-using System.Threading;
 
 namespace Frends.Regex.IsMatch.Tests;
 
@@ -13,7 +12,7 @@ class Tests
     [Test]
     public void TestIsMatchThrowsOnNullParam()
     {
-        Assert.Throws<ArgumentNullException>(() => { Regex.IsMatch(null, DefaultOptions, CancellationToken.None); }, "IsMatch() should throw ArgumentNullException when null parameters are passed.");
+        Assert.Throws<ArgumentNullException>(() => { Regex.IsMatch(null, DefaultOptions, default); }, "IsMatch() should throw ArgumentNullException when null parameters are passed.");
 
         Assert.Throws<ArgumentNullException>(() =>
         {
@@ -21,7 +20,7 @@ class Tests
             {
                 InputText = "not empty",
                 RegularExpression = ""
-            }, DefaultOptions, CancellationToken.None);
+            }, DefaultOptions, default);
         });
 
         Assert.Throws<ArgumentNullException>(() =>
@@ -30,7 +29,7 @@ class Tests
             {
                 InputText = "",
                 RegularExpression = "not empty"
-            }, DefaultOptions, CancellationToken.None);
+            }, DefaultOptions, default);
         });
     }
 
@@ -43,7 +42,7 @@ class Tests
             InputText = "not empty"
         };
 
-        Assert.DoesNotThrow(() => { Regex.IsMatch(matchP, DefaultOptions, CancellationToken.None); });
+        Assert.DoesNotThrow(() => { Regex.IsMatch(matchP, DefaultOptions, default); });
     }
 
     [Test]
@@ -54,7 +53,7 @@ class Tests
             InputText = "{this ain't no thang}",
             RegularExpression = "^{(.*?)}$"
         };
-        var result = Regex.IsMatch(p, DefaultOptions, CancellationToken.None);
+        var result = Regex.IsMatch(p, DefaultOptions, default);
         Assert.IsTrue(result.Success);
         Assert.IsTrue(result.IsMatch);
         Assert.AreEqual("{this ain't no thang}", result.Data);
@@ -64,7 +63,7 @@ class Tests
             InputText = "sdfsdfsdf{this ain't no thang}",
             RegularExpression = "^{(.*?)}$"
         };
-        result = Regex.IsMatch(p, DefaultOptions, CancellationToken.None);
+        result = Regex.IsMatch(p, DefaultOptions, default);
         Assert.IsTrue(result.Success);
         Assert.IsFalse(result.IsMatch);
         Assert.IsNull(result.Data);
@@ -78,7 +77,7 @@ class Tests
         {
             InputText = "test",
             RegularExpression = "[invalid"
-        }, options, CancellationToken.None);
+        }, options, default);
 
         Assert.IsFalse(result.Success);
         Assert.IsNotNull(result.Error);

@@ -26,6 +26,7 @@ public class Result
     /// <summary>
     /// Error information, populated when Success is false.
     /// </summary>
+    /// <example>null</example>
     public Error Error { get; private set; }
 
     internal Result(bool isMatch, string data)

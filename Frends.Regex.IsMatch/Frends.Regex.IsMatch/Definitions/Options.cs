@@ -20,7 +20,7 @@ public class Options
     /// Custom error message used when ThrowErrorOnFailure is enabled or an error result is returned.
     /// Leave empty to use the original exception message.
     /// </summary>
-    /// <example></example>
+    /// <example>Regex match failed</example>
     [DisplayFormat(DataFormatString = "Text")]
     [DefaultValue("")]
     public string ErrorMessageOnFailure { get; set; } = string.Empty;
