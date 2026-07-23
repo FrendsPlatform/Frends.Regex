@@ -7,10 +7,12 @@ namespace Frends.Regex.IsMatch.Tests;
 [TestFixture]
 class Tests
 {
+    private static readonly Options DefaultOptions = new Options();
+
     [Test]
     public void TestIsMatchThrowsOnNullParam()
     {
-        Assert.Throws<ArgumentNullException>(() => { Regex.IsMatch(null); }, "IsMatch() should throw ArgumentNullException when null parameters are passed.");
+        Assert.Throws<ArgumentNullException>(() => { Regex.IsMatch(null, DefaultOptions, default); }, "IsMatch() should throw ArgumentNullException when null parameters are passed.");
 
         Assert.Throws<ArgumentNullException>(() =>
         {
@@ -18,7 +20,7 @@ class Tests
             {
                 InputText = "not empty",
                 RegularExpression = ""
-            });
+            }, DefaultOptions, default);
         });
 
         Assert.Throws<ArgumentNullException>(() =>
@@ -27,7 +29,7 @@ class Tests
             {
                 InputText = "",
                 RegularExpression = "not empty"
-            });
+            }, DefaultOptions, default);
         });
     }
 
@@ -40,7 +42,7 @@ class Tests
             InputText = "not empty"
         };
 
-        Assert.DoesNotThrow(() => { Regex.IsMatch(matchP); });
+        Assert.DoesNotThrow(() => { Regex.IsMatch(matchP, DefaultOptions, default); });
     }
 
     [Test]
@@ -51,7 +53,8 @@ class Tests
             InputText = "{this ain't no thang}",
             RegularExpression = "^{(.*?)}$"
         };
-        var result = Regex.IsMatch(p);
+        var result = Regex.IsMatch(p, DefaultOptions, default);
+        Assert.IsTrue(result.Success);
         Assert.IsTrue(result.IsMatch);
         Assert.AreEqual("{this ain't no thang}", result.Data);
 
@@ -60,8 +63,24 @@ class Tests
             InputText = "sdfsdfsdf{this ain't no thang}",
             RegularExpression = "^{(.*?)}$"
         };
-        result = Regex.IsMatch(p);
+        result = Regex.IsMatch(p, DefaultOptions, default);
+        Assert.IsTrue(result.Success);
         Assert.IsFalse(result.IsMatch);
         Assert.IsNull(result.Data);
+    }
+
+    [Test]
+    public void TestIsMatchReturnsErrorWhenThrowErrorOnFailureIsFalse()
+    {
+        var options = new Options { ThrowErrorOnFailure = false };
+        var result = Regex.IsMatch(new Input
+        {
+            InputText = "test",
+            RegularExpression = "[invalid"
+        }, options, default);
+
+        Assert.IsFalse(result.Success);
+        Assert.IsNotNull(result.Error);
+        Assert.IsNotNull(result.Error.Message);
     }
 }
