@@ -1,4 +1,5 @@
 using Frends.Regex.Replace.Definitions;
+using Frends.Regex.Replace.Helpers;
 using System;
 using System.ComponentModel;
 using System.Threading;
@@ -35,21 +36,7 @@ public static class Regex
         }
         catch (Exception ex)
         {
-            if (ex is OperationCanceledException) throw;
-
-            if (options.ThrowErrorOnFailure)
-            {
-                var message = string.IsNullOrEmpty(options.ErrorMessageOnFailure)
-                    ? ex.Message
-                    : options.ErrorMessageOnFailure;
-                throw new Exception(message, ex);
-            }
-
-            var errorMessage = string.IsNullOrEmpty(options.ErrorMessageOnFailure)
-                ? ex.Message
-                : $"{options.ErrorMessageOnFailure}: {ex.Message}";
-
-            return new Result(new Error { Message = errorMessage, AdditionalInfo = ex });
+            return ex.Handle(options);
         }
     }
 }
