@@ -32,7 +32,11 @@ public static class Regex
 
             var regex = new System.Text.RegularExpressions.Regex(input.RegularExpression);
             string resultValue = regex.Replace(input.InputText, input.Replacement);
-            return new Result(resultValue);
+            return new Result
+            {
+                Success = true,
+                ReplacedText = resultValue,
+            };
         }
         catch (Exception ex)
         {

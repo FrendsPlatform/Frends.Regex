@@ -32,10 +32,14 @@ internal static class ErrorHandler
             ? exception.Message
             : $"{customMessage}: {exception.Message}";
 
-        return new Result(new Error
+        return new Result
         {
-            Message = errorMessage,
-            AdditionalInfo = exception,
-        });
+            Success = false,
+            Error = new Error
+            {
+                Message = errorMessage,
+                AdditionalInfo = exception,
+            },
+        };
     }
 }
