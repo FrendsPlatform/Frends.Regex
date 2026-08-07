@@ -1,6 +1,7 @@
 using Frends.Regex.Replace.Definitions;
 using NUnit.Framework;
 using System;
+using System.Threading;
 
 namespace Frends.Regex.Replace.Tests;
 
@@ -8,11 +9,12 @@ namespace Frends.Regex.Replace.Tests;
 class Tests
 {
     private const string shortString = "Didst thou forge the magic Sampo, Forge the lid in many colors?";
+    private static readonly Options DefaultOptions = new Options();
 
     [Test]
     public void TestReplaceThrowsOnNullParam()
     {
-        Assert.Throws<ArgumentNullException>(() => { Regex.Replace(null); }, "Replace() should throw ArgumentNullException when null parameters are passed.");
+        Assert.Throws<ArgumentNullException>(() => { Regex.Replace(null, DefaultOptions, default); }, "Replace() should throw ArgumentNullException when null parameters are passed.");
 
         Assert.Throws<ArgumentNullException>(() =>
         {
@@ -20,7 +22,7 @@ class Tests
             {
                 InputText = "not empty",
                 RegularExpression = ""
-            });
+            }, DefaultOptions, default);
         });
 
         Assert.Throws<ArgumentNullException>(() =>
@@ -29,7 +31,7 @@ class Tests
             {
                 InputText = "",
                 RegularExpression = "not empty"
-            });
+            }, DefaultOptions, default);
         });
     }
 
@@ -43,7 +45,7 @@ class Tests
             RegularExpression = "not empty"
         };
 
-        Assert.DoesNotThrow(() => { Regex.Replace(replaceP); });
+        Assert.DoesNotThrow(() => { Regex.Replace(replaceP, DefaultOptions, default); });
     }
 
     [Test]
@@ -59,9 +61,10 @@ class Tests
             RegularExpression = "[S][a][m][p][o]"
         };
 
-        var result = Regex.Replace(p);
+        var result = Regex.Replace(p, DefaultOptions, default);
 
         Assert.IsNotNull(result);
+        Assert.IsTrue(result.Success);
         Assert.AreEqual(expected, result.ReplacedText);
     }
 }

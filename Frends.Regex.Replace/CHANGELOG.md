@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.2.0] - 2026-08-07
+### Changed
+- Added error handling support: a new Options parameter lets you control whether errors are thrown as exceptions or returned as part of the result object.
+- The task result now includes a `Success` flag and an `Error` property for more consistent error handling.
+- Updated target framework to .NET 8.
+
 ## [1.1.0] - 2024-09-11
 ### Update
 - [Breaking] Parameter structure has been changed from the version that has been released to NuGet feeds.
