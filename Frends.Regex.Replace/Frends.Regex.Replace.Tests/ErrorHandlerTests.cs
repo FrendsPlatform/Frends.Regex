@@ -24,6 +24,7 @@ internal class ErrorHandlerTests
         var ex = Assert.Throws<Exception>((TestDelegate)(() =>
             Regex.Replace(InvalidInput, options, CancellationToken.None)));
         Assert.That(ex, Is.Not.Null);
+        Assert.That(ex.Message, Is.Not.Null.And.Not.Empty);
     }
 
     [Test]
