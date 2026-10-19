@@ -1,4 +1,8 @@
 # Changelog
+## [2.1.0] - 2026-10-14
+### Fixed
+- Added missing documentation example for the error details returned by the Task.
+
 ## [2.0.0] - 2026-07-23
 ### Changed
 - Task now targets .NET 8.
