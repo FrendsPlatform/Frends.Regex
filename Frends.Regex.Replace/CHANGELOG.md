@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.3.0] - 2026-10-14
+### Changed
+- Added a missing example to the error details documentation of the Task result.
+
 ## [1.2.0] - 2026-08-07
 ### Changed
 - Added error handling support: a new Options parameter lets you control whether errors are thrown as exceptions or returned as part of the result object.
