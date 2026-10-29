@@ -12,18 +12,18 @@ internal class UnitTests
     [Test]
     public void MatchThrowsOnNullParam()
     {
-        Assert.Throws<ArgumentNullException>(() => { Regex.Match(null, default); });
+        Assert.Throws<ArgumentNullException>(() => { Regex.Match(null, new Options(), default); });
 
         Assert.Throws<ArgumentNullException>(() =>
         {
             Regex.Match(
-                new Input { InputText = "not empty", RegularExpression = string.Empty }, default);
+                new Input { InputText = "not empty", RegularExpression = string.Empty }, new Options(), default);
         });
 
         Assert.Throws<ArgumentNullException>(() =>
         {
             Regex.Match(
-                new Input { InputText = string.Empty, RegularExpression = "not empty" }, default);
+                new Input { InputText = string.Empty, RegularExpression = "not empty" }, new Options(), default);
         });
     }
 
@@ -31,7 +31,7 @@ internal class UnitTests
     public void MatchDoesntThrowOnNonNullParam()
     {
         var matchInput = new Input { InputText = "not empty", RegularExpression = "not empty" };
-        Assert.DoesNotThrow(() => { Regex.Match(matchInput, default); });
+        Assert.DoesNotThrow(() => { Regex.Match(matchInput, new Options(), default); });
     }
 
     [Test]
@@ -43,7 +43,7 @@ internal class UnitTests
             InputText = "foobar",
             RegularExpression = "x",
         };
-        var result = Regex.Match(p, default);
+        var result = Regex.Match(p, new Options(), default);
         result.Matches.Should().BeEquivalentTo(expectedResult);
     }
 
@@ -59,7 +59,7 @@ internal class UnitTests
             InputText = "foobar",
             RegularExpression = "f",
         };
-        var result = Regex.Match(p, default);
+        var result = Regex.Match(p, new Options(), default);
         result.Matches.Should().BeEquivalentTo(expectedResult);
     }
 
@@ -77,7 +77,7 @@ internal class UnitTests
             new() { Index = 4, Value = "aro", GroupName = "0", Length = 3 },
         };
 
-        var result = Regex.Match(p, default);
+        var result = Regex.Match(p, new Options(), default);
         result.Matches.Should().BeEquivalentTo(expectedResult);
     }
 }
